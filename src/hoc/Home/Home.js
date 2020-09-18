@@ -3,6 +3,7 @@ import './Home.css';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';    
 import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
+import BannerImage from "../../assets/menlocarbon.jpg"
 
 class Home extends React.Component{
     constructor(props){
@@ -27,20 +28,15 @@ class Home extends React.Component{
 
     render(){
         return (<div className = {"Home"}>
-            <div style ={{opacity:Math.min(100 / this.state.currentScrollHeight  , 1)}} className = {"Banner"}>
-            <h1 className = {"Title"}>Title of Site</h1>
-                <img src = {"https://prod.wp.cdn.aws.wfu.edu/sites/375/2020/04/desktop_night.jpg"} />
-              
-            </div>
+            {/* <div style ={{opacity:Math.min(100 / this.state.currentScrollHeight  , 1)}} className = {"Banner"}>
+            <h1 className = {"Banner_Title"}> carbonzip </h1>
+            </div> */}
+
             <div   className = {"Container"}>
-                <h1 className = {"Title"}>TITLE A</h1>
-                <img src ={"http://www.jenniferheffner.com/wp-content/uploads/2014/03/Enviromental-Photography-jpg.jpg"}/>
+                <h1 className = {"Title_A"}> Helping Schools Be Carbon Free</h1>
+                <img className = {"Container_A"} src ={BannerImage}/>
                 <div className = {"Text"}> 
-                    Why do we use it?
-                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
-                    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
-                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, 
-                    sometimes by accident, sometimes on purpose (injected humour and the like).
+
                 </div>
             </div>
 

@@ -4,7 +4,7 @@ import './App.css';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Home from './hoc/Home/Home';
 import About from './hoc/About/About';
-import Profile from './hoc/Profile/Profile';
+import Calculate from './hoc/Calculate/Calculate';
 import Navigation from './components/Navigation/Toolbar/Toolbar'
 
 
@@ -16,7 +16,7 @@ class App extends React.Component {
       <React.Fragment>
         <Navigation/>
               <Switch>
-                  <Route path="/profile"         component = { Profile } />
+                  <Route path="/calculate"         component = { Calculate } />
                   <Route path="/about"         component = { About }/>
                   <Route path="/home"           component = { Home }/>
                   <Route path="/"         exact component = { Home }/>

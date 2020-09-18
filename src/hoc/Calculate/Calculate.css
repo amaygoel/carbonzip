@@ -1,0 +1,42 @@
+.Calculate{
+    background-color:lightblue;
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.CalculationsContainer{
+    
+    display: flex;
+    justify-content: center;
+    /* margin-top: 2%; */
+    flex-direction: column;
+    width: 50%;
+    height: 70%;
+    margin-left: 25%;
+    background-color: #FFFFFF;
+    color: #000000;
+    border: 10px groove #6D6D6D;  padding: 16px;
+}
+
+.calculateTitle{
+    background-color: black;
+    width: 53%;
+    height: 5%;
+    margin-left: 25.1%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+    width: 70%;
+    height: 80%;    
+    padding: 10px;
+    margin: 0px;
+}

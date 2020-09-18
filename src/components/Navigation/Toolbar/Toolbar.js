@@ -23,10 +23,11 @@ class Toolbar extends Component {
             <header className={"Toolbar"}>
                 <div className={"Logo"}>
                     <Logo />
-                   
+                    <h1>carbonzip</h1>
                 </div>
+                
                 <div  >
-        {(this.state.auth)?<div>Toolbar Thing</div>:null }
+        {(this.state.auth)?<div></div>:null }
                 </div>
                 <nav >
                     <Items/>

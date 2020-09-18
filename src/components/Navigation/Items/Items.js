@@ -20,9 +20,9 @@ class NavigationItems extends Component {
                 <div className = {"slider"}>
                    {/* <img className = {classes.slider} src = {NavBtn} alt="slider"/>*/}
                 </div> 
-                {!this.props.isAuthenticated ? <NavigationItem link="/profile">Profile</NavigationItem> : null }
+                {!this.props.isAuthenticated ? <NavigationItem link="/default">Home </NavigationItem> : null}   
+                {!this.props.isAuthenticated ? <NavigationItem link="/calculate">Calculate</NavigationItem> : null }
                 {!this.props.isAuthenticated ? <NavigationItem link="/about">About</NavigationItem> : null}
-                {!this.props.isAuthenticated ? <NavigationItem link="/default">Home </NavigationItem> : null}    
                 {this.props.isAuthenticated ? <NavigationItem link="/">Home</NavigationItem> : null}
               
                 {!this.props.isAuthenticated && !this.props.sitemaintenance

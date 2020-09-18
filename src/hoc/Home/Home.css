@@ -1,5 +1,5 @@
 .Home{
-    background-color:lightblue;
+    background-color:white;
     width:100vw;
     height:100vh;
     margin:0;
@@ -8,7 +8,7 @@
 }
 
 .Banner{
-   height:40%;
+   height:30%;
 }
 
 .Container{
@@ -24,7 +24,7 @@
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    background-color:lightblue;
+    background-color:white;
     overflow:hidden;
 }
 
@@ -35,7 +35,31 @@
     transform: translate(-50%, -50%);
     color:white;
     font-size:60px;
+    text-align: center;
+}
 
+.Banner_Title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:green;
+    font-size:60px;
+    text-align: center;
+    background-color: lightseagreen;
+}
+
+
+.Title_A{
+    background-color: gray;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-30%, -30%);
+    color:white;
+    font-size:60px;
+    text-align: center;
+    width: 70%;
 }
 
 .Text{
@@ -45,10 +69,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color:white;
-  
 }
 
 
+.Container_A{
+    width: 100%;
+    height: 100%;
+}
 
 
 
