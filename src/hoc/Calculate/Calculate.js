@@ -18,7 +18,12 @@ class Calculate extends React.Component{
 
 onSubmitHandler(e) {
     e.preventDefault()
-    this.setState({total:parseInt(this.state.electricityValue) + parseInt(this.state.gasValue) + parseInt(this.state.distanceTraveled)})
+    this.setState({
+        electricityValue: parseInt(this.state.electricityValue) * .947, 
+        gasValue: parseInt(this.state.gasValue)*.00531,
+        total:parseInt(this.state.electricityValue) + parseInt(this.state.gasValue) + parseInt(this.state.distanceTraveled),
+    
+    })
     console.log("working")
 }
 
@@ -38,7 +43,7 @@ onSubmitHandler(e) {
                 }}/>
                 </li>
                 <li>
-                <label> Gas Usage (Mcf) </label>
+                <label> Gas Usage (CFF) </label>
                 <input onChange = {(e)=>{
                     this.setState({gasValue: e.target.value})
                 }}/>
@@ -53,7 +58,8 @@ onSubmitHandler(e) {
                 </ul>
             </form>
             </div>
-            <h1>{this.state.total||null}</h1>
+            <h1>{this.state.electricityValue||null}</h1>
+            <h1>{this.state.gasValue||null}</h1>
             </div>
         </div>)
     }

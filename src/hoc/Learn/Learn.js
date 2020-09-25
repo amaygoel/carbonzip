@@ -1,10 +1,10 @@
 import React from 'react';
-import './About.css'; 
+import './Learn.css'; 
 import { Route, Switch, BrowserRouter } from 'react-router-dom';    
 import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
 
-class About extends React.Component{
+class Learn extends React.Component{
     constructor(props){
         super(props);
         this.state = {}
@@ -13,7 +13,7 @@ class About extends React.Component{
 
 
     render(){
-            return (<div className = {"About"}>
+        return (<div className = {"About"}>
                 {/* <div style ={{opacity:Math.min(100 / this.state.currentScrollHeight  , 1)}} className = {"Banner"}>
                 <h1 className = {"Banner_Title"}> carbonzip </h1>
                 </div> */}
@@ -66,25 +66,4 @@ class About extends React.Component{
     }
     
 
-    
-
-
-const mapStateToProps = state => {
-    return {
-        
-        //userId: state.user.userId,
-       
-    };
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        _get: (path) => dispatch(actions._get(path)),
-      
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(About);
-
-
-
+export default Learn

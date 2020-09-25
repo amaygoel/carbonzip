@@ -22,6 +22,7 @@ class NavigationItems extends Component {
                 </div> 
                 {!this.props.isAuthenticated ? <NavigationItem link="/default">Home </NavigationItem> : null}   
                 {!this.props.isAuthenticated ? <NavigationItem link="/calculate">Calculate</NavigationItem> : null }
+                {!this.props.isAuthenticated ? <NavigationItem link="/learn">Learn</NavigationItem> : null}
                 {!this.props.isAuthenticated ? <NavigationItem link="/about">About</NavigationItem> : null}
                 {this.props.isAuthenticated ? <NavigationItem link="/">Home</NavigationItem> : null}
               
