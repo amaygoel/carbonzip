@@ -1,5 +1,5 @@
 .Calculate{
-    background-color:lightblue;
+    background-color:white;
     width:100vw;
     height:100vh;
     display: flex;
@@ -17,7 +17,6 @@
     margin-left: 25%;
     background-color: #FFFFFF;
     color: #000000;
-    border: 10px groove #6D6D6D;  padding: 16px;
 }
 
 .calculateTitle{
@@ -39,4 +38,23 @@
     height: 80%;    
     padding: 10px;
     margin: 0px;
+}
+
+.options{
+    display: inline-block;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    background-color: green;
+}
+
+li{
+    list-style: none;
+}
+
+.buttonStyle{
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    
 }

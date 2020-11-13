@@ -4,28 +4,38 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
 import CalculateImage from '../../assets/calculateTree.jpg'
+import Electricity from './Electricity'
+import Heat from './Heat'
+import Commute from './Commute'
 
 class Calculate extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            electricityValue: "",
-            gasValue: "",
-            total: 0
+            currentPage: null,
+            
         }
-        this.onSubmitHandler = this.onSubmitHandler.bind(this);
     }
 
-onSubmitHandler(e) {
-    e.preventDefault()
-    this.setState({
-        electricityValue: parseInt(this.state.electricityValue) * .947, 
-        gasValue: parseInt(this.state.gasValue)*.00531,
-        total:parseInt(this.state.electricityValue) + parseInt(this.state.gasValue) + parseInt(this.state.distanceTraveled),
+    changePage(){
+       return <div>
+           <ul className = {"options"}>
+                <li> 
+                    <button className = {"buttonStyle"} onClick = {e=>{this.setState({currentPage: <Electricity/>})}}>Electric</button>
+                </li>
+                <li>
+                    <button className = {"buttonStyle"} onClick = {e=>{this.setState({currentPage: <Heat/>})}}>Heat</button>
+                </li>
+                <li>
+                    <button className = {"buttonStyle"} onClick = {e=>{this.setState({currentPage: <Commute/>})}}>Commute</button>
+                </li>
+           </ul>
+       </div>
+    }
+
     
-    })
-    console.log("working")
-}
+
+
 
     render(){
         return (<div className = {"Calculate"}>
@@ -33,40 +43,18 @@ onSubmitHandler(e) {
             <h1 className = {"calculateTitle"}>Calculate</h1>
             <div className = {"CalculationsContainer"}>
             {/* <img src = {CalculateImage}/> */}
+            {this.changePage()}
             <div className = {"formContainer"}>
-            <form onSubmit={this.onSubmitHandler}>
-                <ul>
-                <li>
-                <label> Electricity Usage (kWh) </label>
-                <input onChange = {(e)=>{
-                    this.setState({electricityValue: e.target.value})
-                }}/>
-                </li>
-                <li>
-                <label> Gas Usage (CFF) </label>
-                <input onChange = {(e)=>{
-                    this.setState({gasValue: e.target.value})
-                }}/>
-                </li>
-                <li>
-                <label> Distance Traveled (miles) </label>
-                <input onChange = {(e)=>{
-                    this.setState({distanceTraveled: e.target.value})
-                }}/>
-                </li>
-                <button>Calculate</button>
-                </ul>
-            </form>
+                {this.state.currentPage|| null}
             </div>
-            <h1>{this.state.electricityValue||null}</h1>
-            <h1>{this.state.gasValue||null}</h1>
+ 
             </div>
         </div>)
     }
+
+
+
 }
-
-
-
 
 const mapStateToProps = state => {
     return {
