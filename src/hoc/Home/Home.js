@@ -35,9 +35,7 @@ class Home extends React.Component{
             <div   className = {"Container"}>
                 <h1 className = {"Title_A"}> Helping Schools Be Carbon Free</h1>
                 <img className = {"Container_A"} src ={BannerImage}/>
-                <div className = {"Text"}> 
-
-                </div>
+                <div className = {"Text"}> </div>
             </div>
 
         <div className = {"Container"}>

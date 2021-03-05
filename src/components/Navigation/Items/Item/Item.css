@@ -6,19 +6,18 @@
     display: flex;
     height:auto;
     align-items: center;
- 
-    
+    text-align: center;
 }
 
 
 .NavigationItem a {
-    color: white;
+    color: black;
     text-decoration: none;
-    height: 100%;
-    padding: 16px, 10px;
-    box-sizing: border-box;
-    display: block;
-    margin-top: 10px;
+    /* height: 100%;
+    padding: 16px, 10px; */
+    /* box-sizing: border-box; */
+    /* display: block; */
+    /* margin-top: 25px; */
     padding: 10px;
    
 }
@@ -28,9 +27,9 @@
 .NavigationItem a:hover,
 .NavigationItem a:focus
 {
-    background-color:	#d1d1d1;
+    /* background-color:	#d1d1d1; */
     border-bottom: 4px solid rgba(59, 57, 57, 0.75);
-    color:white;
+    /* color:white; */
     cursor: pointer;
     border-radius: 7px;
    

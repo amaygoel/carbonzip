@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 import App from './App';    
 import * as serviceWorker from './serviceWorker';
-//import firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import { BrowserRouter } from 'react-router-dom';
 import userReducer from '../src/store/reducers/user';
 import mainReducer from '../src/store/reducers/main';
@@ -30,16 +30,18 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 //FIREBASE ##################
 
-/*const config = {
-  apiKey: "yfsyfdffjyfjyfr5ygjgdjkgx",
-  authDomain: "sample.firebaseapp.com",
-  databaseURL: "https://website.firebaseio.com",
-  projectId: "sample",
-  storageBucket: "sample.appspot.com",
-  messagingSenderId: "5364675734653"
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyD_4lmv_kpi5Ppsgpdbc1HYTs13ODzGlqc",
+  authDomain: "carbonzip-651cb.firebaseapp.com",
+  projectId: "carbonzip-651cb",
+  storageBucket: "carbonzip-651cb.appspot.com",
+  messagingSenderId: "118918184054",
+  appId: "1:118918184054:web:4d63984f27de1bab4a7357",
+  measurementId: "G-JTTV8YD670"
 };
-firebase.initializeApp(config);
-*/
+firebase.initializeApp(firebaseConfig);
+
 
 
 //###########################

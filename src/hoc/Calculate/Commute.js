@@ -9,12 +9,13 @@ class Commute extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            TypeOfFuel: "",
+            TypeOfFuel: "Diesel",
             AverageDistance: "",
             AverageMPG: "",
             NumVehicles: "",
+            DaysInSchoolYear: "",
             CCF: "",
-            lbs_co2: "",
+            kgs_co2: "",
             total_cost: 0
         }
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
@@ -23,13 +24,14 @@ class Commute extends React.Component{
 
 onSubmitHandler(e) {
     e.preventDefault()
-    this.setState({
-        CCF: parseInt(this.state.CCF) * .947, 
-        tonnes_co2: parseInt(this.state.lbs_co2)*.00531,
-        total_cost:parseInt(this.state.CCF) + parseInt(this.state.lbs_co2),
+    if (this.state.TypeOfFuel == "Diesel"){
+        this.setState({kgs_co2: ((this.state.NumVehicles * this.state.AverageDistance *2)/(this.state.AverageMPG))* 10.21}) 
+        console.log(this.state.kgs_co2) }
+
+    if (this.state.TypeOfFuel == "Gasoline"){
+        this.setState({kgs_co2: ((this.state.NumVehicles * this.state.AverageDistance *2)/(this.state.AverageMPG))* 8.78}) 
+        console.log(this.state.kgs_co2) }
     
-    })
-    console.log("working")
 }
 
 onChangeHandler(e) {
@@ -37,13 +39,14 @@ onChangeHandler(e) {
     this.setState({
         TypeOfFuel: e.target.value
     })
+    console.log(this.state.TypeOfFuel)
 
 }
 
     render(){
         return (<div>
             
-            <h1 className = {"Commute"}>Commute</h1>
+            <h1 className = {"optionsTitle"}>Commute</h1>
             <div className = {"CommuteContainer"}>
             {/* <img src = {CalculateImage}/> */}
             <div className = {"formContainer"}>
@@ -58,6 +61,12 @@ onChangeHandler(e) {
                     <option value = {"Diesel"}>Diesel</option>
                     <option value = {"Gasoline"}>Gasoline</option>
                 </select>
+                </li>
+                <li>
+                <label> Number of School Days per Year </label>
+                <input onChange = {(e)=>{
+                    this.setState({DaysInSchoolYear: e.target.value})
+                }}/>
                 </li>
                 <li>
                 <label> Number of Vehicles </label>
@@ -78,23 +87,17 @@ onChangeHandler(e) {
                 }}/>
                 </li>
                 <li>
-                <label> lbs CO2 </label>
-                <input onChange = {(e)=>{
-                    this.setState({lbs_co2: e.target.value})
-                }}/>
+                <label> kgs CO2 </label>
+                <h1>{this.state.kgs_co2 || null}</h1>
                 </li>
                 <li>
                 <label> Total Cost </label>
-                <input onChange = {(e)=>{
-                    this.setState({total_cost: e.target.value})
-                }}/>
+                <h1>{this.state.total_cost || null}</h1>
                 </li>
                 <button>Calculate</button>
                 </ul>
             </form>
             </div>
-            <h1>{this.state.KWH||null}</h1>
-            <h1>{this.state.tonnes_co2||null}</h1>
             </div>
         </div>)
     }

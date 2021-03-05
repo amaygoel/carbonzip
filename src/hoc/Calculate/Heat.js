@@ -19,9 +19,8 @@ class Heat extends React.Component{
 onSubmitHandler(e) {
     e.preventDefault()
     this.setState({
-        CCF: parseInt(this.state.CCF) * .947, 
-        tonnes_co2: parseInt(this.state.lbs_co2)*.00531,
-        total_cost:parseInt(this.state.CCF) + parseInt(this.state.lbs_co2),
+        CCF: parseInt(this.state.CCF) / 100, 
+        tonnes_co2: parseInt(this.state.CCF)*.00531,
     
     })
     console.log("working")
@@ -30,7 +29,7 @@ onSubmitHandler(e) {
     render(){
         return (<div>
             
-            <h1 className = {"Heat"}>Heat</h1>
+            <h1 className = {"optionsTitle"}>Heat</h1>
             <div className = {"HeatContainer"}>
             {/* <img src = {CalculateImage}/> */}
             <div className = {"formContainer"}>
@@ -43,23 +42,17 @@ onSubmitHandler(e) {
                 }}/>
                 </li>
                 <li>
-                <label> lbs CO2 </label>
-                <input onChange = {(e)=>{
-                    this.setState({lbs_co2: e.target.value})
-                }}/>
+                <label> tonnes CO2 </label>
+                <h1>{this.state.tonnes_co2}</h1>
                 </li>
                 <li>
                 <label> Total Cost </label>
-                <input onChange = {(e)=>{
-                    this.setState({total_cost: e.target.value})
-                }}/>
+                <h1>{this.state.total_cost}</h1>
                 </li>
                 <button>Calculate</button>
                 </ul>
             </form>
             </div>
-            <h1>{this.state.KWH||null}</h1>
-            <h1>{this.state.tonnes_co2||null}</h1>
             </div>
         </div>)
     }

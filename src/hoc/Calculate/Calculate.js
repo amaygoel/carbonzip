@@ -7,6 +7,8 @@ import CalculateImage from '../../assets/calculateTree.jpg'
 import Electricity from './Electricity'
 import Heat from './Heat'
 import Commute from './Commute'
+import BannerImage from "../../assets/menlocarbon.jpg"
+
 
 class Calculate extends React.Component{
     constructor(props){
@@ -39,15 +41,15 @@ class Calculate extends React.Component{
 
     render(){
         return (<div className = {"Calculate"}>
-            
             <h1 className = {"calculateTitle"}>Calculate</h1>
             <div className = {"CalculationsContainer"}>
+            {/* <img className = {"backgroundImage"} src ={BannerImage}/> */}
+
             {/* <img src = {CalculateImage}/> */}
             {this.changePage()}
             <div className = {"formContainer"}>
                 {this.state.currentPage|| null}
             </div>
- 
             </div>
         </div>)
     }
