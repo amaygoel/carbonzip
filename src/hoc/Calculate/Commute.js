@@ -12,7 +12,7 @@ class Commute extends React.Component{
             TypeOfFuel: "Diesel",
             AverageDistance: "",
             AverageMPG: "",
-            NumVehicles: "",
+            Busses: "",
             DaysInSchoolYear: "",
             CCF: "",
             kgs_co2: "",
@@ -25,11 +25,11 @@ class Commute extends React.Component{
 onSubmitHandler(e) {
     e.preventDefault()
     if (this.state.TypeOfFuel == "Diesel"){
-        this.setState({kgs_co2: ((this.state.NumVehicles * this.state.AverageDistance *2)/(this.state.AverageMPG))* 10.21}) 
+        this.setState({kgs_co2: ((this.state.Busses * this.state.AverageDistance *2)/(this.state.AverageMPG))* 10.21}) 
         console.log(this.state.kgs_co2) }
 
     if (this.state.TypeOfFuel == "Gasoline"){
-        this.setState({kgs_co2: ((this.state.NumVehicles * this.state.AverageDistance *2)/(this.state.AverageMPG))* 8.78}) 
+        this.setState({kgs_co2: ((this.state.Busses * this.state.AverageDistance *2)/(this.state.AverageMPG))* 8.78}) 
         console.log(this.state.kgs_co2) }
     
 }
@@ -69,9 +69,9 @@ onChangeHandler(e) {
                 }}/>
                 </li>
                 <li>
-                <label> Number of Vehicles </label>
+                <label> Number of Busses </label>
                 <input onChange = {(e)=>{
-                    this.setState({NumVehicles: e.target.value})
+                    this.setState({Busses: e.target.value})
                 }}/>
                 </li>
                 <li>
@@ -90,10 +90,10 @@ onChangeHandler(e) {
                 <label> kgs CO2 </label>
                 <h1>{this.state.kgs_co2 || null}</h1>
                 </li>
-                <li>
+                {/* <li>
                 <label> Total Cost </label>
                 <h1>{this.state.total_cost || null}</h1>
-                </li>
+                </li> */}
                 <button>Calculate</button>
                 </ul>
             </form>

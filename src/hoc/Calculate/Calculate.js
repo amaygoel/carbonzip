@@ -41,15 +41,15 @@ class Calculate extends React.Component{
 
     render(){
         return (<div className = {"Calculate"}>
-            <h1 className = {"calculateTitle"}>Calculate</h1>
-            <div className = {"CalculationsContainer"}>
+            {/* <h1 className = {"calculateTitle"}>Calculate</h1> */}
+            {/* <div className = {"CalculationsContainer"}> */}
             {/* <img className = {"backgroundImage"} src ={BannerImage}/> */}
 
             {/* <img src = {CalculateImage}/> */}
             {this.changePage()}
             <div className = {"formContainer"}>
                 {this.state.currentPage|| null}
-            </div>
+            {/* </div> */}
             </div>
         </div>)
     }

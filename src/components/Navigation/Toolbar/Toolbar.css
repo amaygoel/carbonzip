@@ -5,12 +5,14 @@
     top: 0;
     left: 0;
     background-color: white;
-    color: black;
+    color: green;
     display: flex;
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 90;
+    font-family: monospace;
+    font-size: 15px;
     
     /* box-shadow: 2px 2px 3px white;
     opacity: 0.7; */

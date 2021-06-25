@@ -1,10 +1,10 @@
 import React from 'react';
-import './Learn.css'; 
+import './Offsets.css'; 
 import { Route, Switch, BrowserRouter } from 'react-router-dom';    
 import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
 
-class Learn extends React.Component{
+class Offsets extends React.Component{
     constructor(props){
         super(props);
         this.state = {}
@@ -13,13 +13,14 @@ class Learn extends React.Component{
 
 
     render(){
-        return (<div className = {"About"}>
+            return (<div className = {"Offsets"}>
                 {/* <div style ={{opacity:Math.min(100 / this.state.currentScrollHeight  , 1)}} className = {"Banner"}>
                 <h1 className = {"Banner_Title"}> carbonzip </h1>
                 </div> */}
-    
+                
                 <div   className = {"Container"}>
                     <img className = {"Container_A"} />
+                    
                     <div className = {"Text"}> 
                         Why do we use it?
                         It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
@@ -66,4 +67,25 @@ class Learn extends React.Component{
     }
     
 
-export default Learn
+    
+
+
+const mapStateToProps = state => {
+    return {
+        
+        //userId: state.user.userId,
+       
+    };
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        _get: (path) => dispatch(actions._get(path)),
+      
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Offsets);
+
+
+

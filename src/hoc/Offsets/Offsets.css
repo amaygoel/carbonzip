@@ -1,0 +1,82 @@
+.Offsets{
+    background-color:white;
+    width:100vw;
+    height:100vh;
+    margin:0;
+    padding:0;
+
+}
+
+.Banner{
+   height:30%;
+}
+
+.Container{
+    height:100%;
+    border: 2px solid rgb(0,0,0,0.5); 
+    overflow-x: hidden;
+}
+
+.Container, .Banner{
+    position:relative;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    overflow:hidden;
+}
+
+.Title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    font-size:60px;
+    text-align: center;
+}
+
+.Banner_Title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:green;
+    font-size:60px;
+    text-align: center;
+    background-color: lightseagreen;
+}
+
+
+.Title_A{
+    background-color: gray;
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-30%, -30%);
+    color:white;
+    font-size:60px;
+    text-align: center;
+    width: 70%;
+}
+
+.Text{
+    font-size:25px;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color:white;
+}
+
+
+.Container_A{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(99, 189, 99);
+}
+
+
+

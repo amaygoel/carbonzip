@@ -45,10 +45,10 @@ onSubmitHandler(e) {
                 <label> tonnes CO2 </label>
                 <h1>{this.state.tonnes_co2}</h1>
                 </li>
-                <li>
+                {/* <li>
                 <label> Total Cost </label>
                 <h1>{this.state.total_cost}</h1>
-                </li>
+                </li> */}
                 <button>Calculate</button>
                 </ul>
             </form>
