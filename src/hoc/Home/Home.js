@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import * as actions from '../../store/actions';
 import { connect } from 'react-redux';
 import BannerImage from "../../assets/menlocarbon.jpg"
+// import Calculate from './hoc/Calculate/Calculate'
 
 class Home extends React.Component{
     constructor(props){
@@ -36,9 +37,11 @@ class Home extends React.Component{
                 <h1 className = {"Title_A"}> Helping Schools Be Carbon Free</h1>
                 <img className = {"Container_A"} src ={BannerImage}/>
                 <div className = {"Text"}> </div>
+                <button className = {"Get_Started"} >Get Started</button>
+                {/* onClick = {e=>{this.setState({currentPage: <Calculate/>})}} */}
             </div>
 
-        <div className = {"Container"}>
+        {/* <div className = {"Container"}>
         <h1 className = {"Title"}>TITLE B</h1>
                 <img src = {"https://rightasrain.uwmedicine.org/sites/chew/files/styles/large/public/images/2018/going-vegan.jpg?h=a61a7e7e&itok=RLMcPHvf"}/>
                 <div className = {"Text"}> 
@@ -61,7 +64,7 @@ class Home extends React.Component{
                 and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, 
                 sometimes by accident, sometimes on purpose (injected humour and the like).
                </div>
-            </div>
+            </div> */}
         </div>)
     }
 }

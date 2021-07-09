@@ -10,7 +10,7 @@ class Electricity extends React.Component{
         super(props);
         this.state = {
             KWH: "",
-            lbs_co2: "",
+            tons_co2: "",
             total_cost: 0
         }
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
@@ -19,9 +19,11 @@ class Electricity extends React.Component{
 onSubmitHandler(e) {
     e.preventDefault()
     this.setState({
-        lbs_co2: parseInt(this.state.KWH) * .947,
+        tons_co2: parseInt(this.state.KWH) * 0.00046348,
     
     })
+    localStorage.setItem("Electricity",this.state.tons_co2)
+
     console.log("working")
 }
 
@@ -35,20 +37,20 @@ onSubmitHandler(e) {
             <form onSubmit={this.onSubmitHandler}>
                 <ul>
                 <li>
-                <label> KWH </label>
                 <input onChange = {(e)=>{
                     this.setState({KWH: e.target.value})
                 }}/>
+                <label> KWH </label>
                 </li>
                 <li>
-                <label> lbs CO2 </label>
-                <h1>{this.state.lbs_co2}</h1>
+                
                 </li>
                 {/* <li>
                 <label> Total Cost </label>
                 <h1>{this.state.total_cost}</h1>
                 </li> */}
                 <button>Calculate</button>
+                <h1>{this.state.tons_co2}<label> Metric Tons CO2 </label></h1>
                 </ul>
             </form>
             </div>

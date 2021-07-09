@@ -10,7 +10,7 @@ class Heat extends React.Component{
         super(props);
         this.state = {
             CCF: "",
-            lbs_co2: "",
+            tons_co2: "",
             total_cost: 0
         }
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
@@ -19,10 +19,10 @@ class Heat extends React.Component{
 onSubmitHandler(e) {
     e.preventDefault()
     this.setState({
-        CCF: parseInt(this.state.CCF) / 100, 
-        tonnes_co2: parseInt(this.state.CCF)*.00531,
-    
+        // CCF: parseInt(this.state.CCF) / 100, 
+        tons_co2: parseInt(this.state.CCF)*0.0000548,
     })
+    localStorage.setItem("Heat",this.state.tons_co2)
     console.log("working")
 }
 
@@ -36,20 +36,19 @@ onSubmitHandler(e) {
             <form onSubmit={this.onSubmitHandler}>
                 <ul>
                 <li>
-                <label> CCF </label>
                 <input onChange = {(e)=>{
                     this.setState({CCF: e.target.value})
                 }}/>
-                </li>
-                <li>
-                <label> tonnes CO2 </label>
-                <h1>{this.state.tonnes_co2}</h1>
+                <label> CCF </label>
                 </li>
                 {/* <li>
                 <label> Total Cost </label>
                 <h1>{this.state.total_cost}</h1>
                 </li> */}
                 <button>Calculate</button>
+                <li>
+                    <h1>{this.state.tons_co2}<label> Metric Tons CO2 </label></h1>
+                </li>
                 </ul>
             </form>
             </div>

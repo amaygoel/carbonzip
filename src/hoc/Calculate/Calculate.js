@@ -8,6 +8,7 @@ import Electricity from './Electricity'
 import Heat from './Heat'
 import Commute from './Commute'
 import BannerImage from "../../assets/menlocarbon.jpg"
+import DisplayCalcs from './DisplayCalcs'
 
 
 class Calculate extends React.Component{
@@ -18,7 +19,6 @@ class Calculate extends React.Component{
             
         }
     }
-
     changePage(){
        return <div>
            <ul className = {"options"}>
@@ -49,9 +49,12 @@ class Calculate extends React.Component{
             {this.changePage()}
             <div className = {"formContainer"}>
                 {this.state.currentPage|| null}
-            {/* </div> */}
+            {/* </div>  */}
+            <DisplayCalcs/>
+
             </div>
         </div>)
+        
     }
 
 

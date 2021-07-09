@@ -7,6 +7,10 @@
 
 }
 
+.Get_Started{
+    justify-content: left;
+    size: 100px;
+}
 .Banner{
    height:30%;
 }

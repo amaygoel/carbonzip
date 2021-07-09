@@ -11,11 +11,12 @@ class Commute extends React.Component{
         this.state = {
             TypeOfFuel: "Diesel",
             AverageDistance: "",
+            AverageMPD: "",
             AverageMPG: "",
             Busses: "",
             DaysInSchoolYear: "",
             CCF: "",
-            kgs_co2: "",
+            tons_co2: "",
             total_cost: 0
         }
         this.onSubmitHandler = this.onSubmitHandler.bind(this);
@@ -25,12 +26,15 @@ class Commute extends React.Component{
 onSubmitHandler(e) {
     e.preventDefault()
     if (this.state.TypeOfFuel == "Diesel"){
-        this.setState({kgs_co2: ((this.state.Busses * this.state.AverageDistance *2)/(this.state.AverageMPG))* 10.21}) 
-        console.log(this.state.kgs_co2) }
+        this.setState({tons_co2: ((this.state.Busses * this.state.AverageMPD * this.state.DaysInSchoolYear)/6)* .010180}) 
+        console.log(this.state.tons_co2) }
 
     if (this.state.TypeOfFuel == "Gasoline"){
-        this.setState({kgs_co2: ((this.state.Busses * this.state.AverageDistance *2)/(this.state.AverageMPG))* 8.78}) 
-        console.log(this.state.kgs_co2) }
+        this.setState({tons_co2: ((this.state.Busses * this.state.AverageMPD * this.state.DaysInSchoolYear)/4)* .00887}) 
+        console.log(this.state.tons_co2) }
+
+    localStorage.setItem("Commute",this.state.tons_co2)
+
     
 }
 
@@ -75,26 +79,26 @@ onChangeHandler(e) {
                 }}/>
                 </li>
                 <li>
-                <label> Average Miles per Gallon </label>
+                <label> Avg. miles driven / day </label>
                 <input onChange = {(e)=>{
-                    this.setState({AverageMPG: e.target.value})
+                    this.setState({AverageMPD: e.target.value})
                 }}/>
                 </li>
-                <li>
-                <label> Average Distance to School </label>
+                {/*<li>
+                 <label> Average Distance to School </label>
                 <input onChange = {(e)=>{
                     this.setState({AverageDistance: e.target.value})
                 }}/>
-                </li>
-                <li>
-                <label> kgs CO2 </label>
-                <h1>{this.state.kgs_co2 || null}</h1>
-                </li>
+                </li> */}
+                
                 {/* <li>
                 <label> Total Cost </label>
                 <h1>{this.state.total_cost || null}</h1>
                 </li> */}
                 <button>Calculate</button>
+                <li>
+                    <h1>{this.state.tons_co2 || null} <label> Metric Tons CO2 </label></h1>
+                </li>
                 </ul>
             </form>
             </div>
