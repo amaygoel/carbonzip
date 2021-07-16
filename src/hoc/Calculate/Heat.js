@@ -19,11 +19,11 @@ class Heat extends React.Component{
 onSubmitHandler(e) {
     e.preventDefault()
     this.setState({
-        // CCF: parseInt(this.state.CCF) / 100, 
+        //CCF: parseInt(this.state.CCF) / 100, 
         tons_co2: parseInt(this.state.CCF)*0.0000548,
     })
-    localStorage.setItem("Heat",this.state.tons_co2)
-    console.log("working")
+    localStorage.setItem("Heat",parseInt(this.state.CCF)*0.0000548)
+    
 }
 
     render(){

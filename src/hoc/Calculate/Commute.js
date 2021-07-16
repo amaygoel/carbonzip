@@ -27,13 +27,17 @@ onSubmitHandler(e) {
     e.preventDefault()
     if (this.state.TypeOfFuel == "Diesel"){
         this.setState({tons_co2: ((this.state.Busses * this.state.AverageMPD * this.state.DaysInSchoolYear)/6)* .010180}) 
-        console.log(this.state.tons_co2) }
+        localStorage.setItem("Commute",((this.state.Busses * this.state.AverageMPD * this.state.DaysInSchoolYear)/6)* .010180)
+    
+    }
 
     if (this.state.TypeOfFuel == "Gasoline"){
         this.setState({tons_co2: ((this.state.Busses * this.state.AverageMPD * this.state.DaysInSchoolYear)/4)* .00887}) 
-        console.log(this.state.tons_co2) }
+        localStorage.setItem("Commute",((this.state.Busses * this.state.AverageMPD * this.state.DaysInSchoolYear)/4)* .00887)
+    
+    }
 
-    localStorage.setItem("Commute",this.state.tons_co2)
+   
 
     
 }

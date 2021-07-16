@@ -19,10 +19,10 @@ class Electricity extends React.Component{
 onSubmitHandler(e) {
     e.preventDefault()
     this.setState({
-        tons_co2: parseInt(this.state.KWH) * 0.00046348,
+        tons_co2: this.state.KWH * 0.00046348,
     
     })
-    localStorage.setItem("Electricity",this.state.tons_co2)
+    localStorage.setItem("Electricity",this.state.KWH * 0.00046348)
 
     console.log("working")
 }
