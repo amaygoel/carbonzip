@@ -37,7 +37,7 @@ class Home extends React.Component{
                 <h1 className = {"Title_A"}> Helping Schools Be Carbon Free</h1>
                 <img className = {"Container_A"} src ={BannerImage}/>
                 <div className = {"Text"}> </div>
-                <button className = {"Get_Started"} >Get Started</button>
+                {/* <button className = {"Get_Started"} >Get Started</button> */}
                 {/* onClick = {e=>{this.setState({currentPage: <Calculate/>})}} */}
             </div>
 

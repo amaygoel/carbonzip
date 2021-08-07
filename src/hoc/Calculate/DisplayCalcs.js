@@ -25,16 +25,16 @@ export default function Display(props) {
     <div className = {"Stats-Container"}>
       <div className= {"Carbon-Data"}>
         <ul>
-            <li>Electricity: {electricity || 0}</li>
-            <li>Heat: {heat || 0}</li>
-            <li>Commute: {commute || 0}</li>
+            <li>Electricity: {electricity || 0} MT</li>
+            <li>Heat: {heat || 0} MT</li>
+            <li>Commute: {commute || 0} MT</li>
         </ul>
 
       </div>
        
   
        
-      {(electricity&&heat&&commute)? <h1>Your Total: {electricity+heat+commute}</h1>: <h1>{count}</h1>}
+      {(electricity&&heat&&commute)? <h1>Your Total: {electricity+heat+commute} MT</h1>: <h1>{count}</h1>}
     
 
     

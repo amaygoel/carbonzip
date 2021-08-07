@@ -15,15 +15,17 @@ class Calculate extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            currentPage: null,
+            currentPage: <h1>Carbon Footprint Calculator for Schools</h1>
             
         }
     }
+  
+
     changePage(){
        return <div>
            <ul className = {"options"}>
                 <li> 
-                    <button className = {"buttonStyle"} onClick = {e=>{this.setState({currentPage: <Electricity/>})}}>Electric</button>
+                    <button className = {"buttonStyle"} onClick = {e=>{this.setState({currentPage: <Electricity/>})}}>Electricity</button>
                 </li>
                 <li>
                     <button className = {"buttonStyle"} onClick = {e=>{this.setState({currentPage: <Heat/>})}}>Heat</button>
